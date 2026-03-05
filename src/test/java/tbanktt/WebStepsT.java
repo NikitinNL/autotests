@@ -1,7 +1,7 @@
 package tbanktt;
 
 import io.qameta.allure.Step;
-import utils.RandomUtilsT;
+import tbanktt.utils.RandomUtilsT;
 //import tbank.helpers.HighlightUtils;
 
 import static com.codeborne.selenide.Condition.text;

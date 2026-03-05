@@ -1,4 +1,4 @@
-package utils;
+package tbanktt.utils;
 
 import com.github.javafaker.Faker;
 
