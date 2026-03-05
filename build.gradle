@@ -1,19 +1,19 @@
 plugins {
     id 'java-library'
-    id 'io.qameta.allure' version '2.12.0'  // Подключение аллюр отчета и его версии
+    id 'io.qameta.allure' version '2.11.2'  // Подключение аллюр отчета и его версии
 
 }
 
 
 allure {
     report { //секция репорта
-        version.set("2.21.0") // https://github.com/allure-framework/allure2
+        version.set("2.24.0") // https://github.com/allure-framework/allure2
     }
     adapter { // отвечает за появление папочки build/allure-results
         aspectjWeaver.set(true) //обработка аннотации @Step
         frameworks {
             junit5 { //название фреймворка
-                adapterVersion.set("2.21.0") //https://github.com/allure-framework/allure-java
+                adapterVersion.set("2.24.0") //https://github.com/allure-framework/allure-java
             }
         }
     }
@@ -29,33 +29,39 @@ dependencies {
     testImplementation(
             "com.codeborne:selenide:7.4.3",
             "com.github.javafaker:javafaker:1.0.2",
-            "org.junit.jupiter:junit-jupiter:5.9.2",
+            "org.junit.jupiter:junit-jupiter:5.10.2",
             'com.codeborne:pdf-test:1.5.0',
             'com.codeborne:xls-test:1.4.3',
-            'com.opencsv:opencsv:5.7.1',
-            'com.fasterxml.jackson.core:jackson-core:2.13.3',
-            'com.fasterxml.jackson.core:jackson-databind:2.13.3',
-            'io.qameta.allure:allure-selenide:2.21.0',
-            'io.github.bonigarcia:webdrivermanager:5.8.0'
+            'com.opencsv:opencsv:5.9',
+            'com.fasterxml.jackson.core:jackson-core:2.17.1',
+            'com.fasterxml.jackson.core:jackson-databind:2.17.1',
+            'io.qameta.allure:allure-selenide:2.24.0',
+            'io.github.bonigarcia:webdrivermanager:5.9.2',
+            'org.slf4j:slf4j-simple:2.0.13',
+            'org.aspectj:aspectjweaver:1.9.22.1'
     )
-
-}
-
-tasks.withType(Test) {
-    systemProperties(System.getProperties())
 
 }
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 test {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
+    jvmArgs = ["-XX:+EnableDynamicAgentLoading"]
+
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
 }
 
-task homealfa(type: Test){
-    useJUnitPlatform{
-        includeTags("alfahome")   // Тэг теста
-        //excludeTags("Название ТЭГА")  // Не запускать тест с тэгом
+task homealfa(type: Test) {
+    useJUnitPlatform {
+        includeTags("alfahome")
     }
+    jvmArgs = ["-XX:+EnableDynamicAgentLoading"]
 }
