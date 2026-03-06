@@ -37,9 +37,6 @@ public class StepsT extends TastBaseT {
         stepsP.backInsurance(); // Закрываем Мой полис
 
         stepsP.checkingClosure(); // Проверка закрытия формы Мой полис
-
-
-
     }
 
 

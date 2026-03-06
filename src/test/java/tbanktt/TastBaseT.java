@@ -17,8 +17,8 @@ public class TastBaseT {
     static void beforeAll() {
         Configuration.baseUrl = "https://www.tbank.ru/";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = false;    //включить при ЛОКАЛЬНОМ ЗАПУСКЕ true
-        Configuration.headless = true;
+        Configuration.holdBrowserOpen = true;    //включить при ЛОКАЛЬНОМ ЗАПУСКЕ true
+        //Configuration.headless = true;
         //Configuration.browser = "firefox";
         Configuration.timeout = 60000;
         Configuration.pageLoadTimeout = 120000;
@@ -30,7 +30,7 @@ public class TastBaseT {
         DesiredCapabilities capabilities = new DesiredCapabilities();    // Задаем для селиноида набор опций,
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
-                "enableVidio", false   //включить при ЛОКАЛЬНОМ ЗАПУСКЕ true
+                "enableVidio", true   //включить при ЛОКАЛЬНОМ ЗАПУСКЕ true
         ));   // enableVNC - потоковое видео, демонстрация при запуске.  enableVidio - запись видео
 
         Configuration.browserCapabilities = capabilities;   // передали настройки в этот блок

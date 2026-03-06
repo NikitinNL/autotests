@@ -26,7 +26,7 @@ public class ResultUtilsT extends WebStepsT {
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("Срок действия полиса")).highlight();
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("06.03.2026 - 05.03.2027")).highlight();
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("Страхователь")).highlight();
-        //$("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text(username)).highlight();
+        $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text(username)).highlight();
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("Дата рождения")).highlight();
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text(birthday)).highlight();
     }

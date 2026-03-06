@@ -61,7 +61,7 @@ test {
 
 task homealfa(type: Test) {
     useJUnitPlatform {
-        includeTags("alfahome")
+        includeTags("alfahome", "tbanktt")
     }
     jvmArgs = ["-XX:+EnableDynamicAgentLoading"]
 }
