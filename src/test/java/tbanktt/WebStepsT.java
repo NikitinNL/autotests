@@ -98,18 +98,6 @@ public class WebStepsT {
         $("input[name='phone_mobile']").setValue(telephone).highlight();
     }
 
-//    @Step("Проверка заполнения формы Мой полис")
-//    public void myProfile() {
-//        $(".abJpbImay").highlight().click(); // Нажать на ссылку "Моя анкета"
-//        $("#:r1k:").should(appear); // Дождаться появления анкеты
-//        $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text(""))
-//        $("header[data-qa-type='tui/header']").highlight().shouldHave(text("Таунхаус"));
-//        $$(".data-cobrowsing-secure").get(0).highlight().shouldHave(text("Страхование жизни и здоровья"));
-//
-//
-//
-//    }
-
 
 
 }

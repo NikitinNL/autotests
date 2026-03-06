@@ -18,6 +18,7 @@ public class TastBaseT {
         Configuration.baseUrl = "https://www.tbank.ru/";
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = true;
+        Configuration.headless = true;
         //Configuration.browser = "firefox";
         Configuration.timeout = 60000;
         Configuration.pageLoadTimeout = 120000;
