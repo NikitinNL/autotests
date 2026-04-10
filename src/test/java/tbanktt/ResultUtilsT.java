@@ -24,11 +24,11 @@ public class ResultUtilsT extends WebStepsT {
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("Страховая сумма")).highlight();
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("5 500 000 ₽")).highlight();
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("Срок действия полиса")).highlight();
-        $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("06.03.2026 - 05.03.2027")).highlight();
+        $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("11.03.2026 - 10.03.2027")).highlight();
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("Страхователь")).highlight();
-        $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text(username)).highlight();
+        $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text(username2)).highlight();
         $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text("Дата рождения")).highlight();
-        $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text(birthday)).highlight();
+        $("div[data-qa-type='tui/dialog-layout.content']").shouldHave(text(birthday2)).highlight();
     }
 
     @Step("Вернуться к оформлению")

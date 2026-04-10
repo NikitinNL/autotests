@@ -13,14 +13,16 @@ public class WebStepsT {
 
     String telephone = RandomUtilsT.getRandomTelephone(),
             username = RandomUtilsT.getRandomUserName(),
-            birthday= RandomUtilsT.getRandomBirthday();
+            birthday= RandomUtilsT.getRandomBirthday(),
+            username2 = username,
+            birthday2 = birthday;
 
 
 
     @Step("Открыть страницу и проверить наличие элемента")
     public void openPage() {
         open("/");
-        $(".gbVmfabtG").shouldHave(text("Оформить карту")).highlight();
+        $(".bb0iMjkRt").shouldHave(text("Оформить карту")).highlight();
     }
 
     @Step("Оформление кредитной карты")
@@ -77,11 +79,11 @@ public class WebStepsT {
     public void mortgageInsurance() {
         // Главное меню выпадающее
         $("span[data-test='menu-item-0-title']").highlight().hover();
-        $("a[href='/insurance/mortgage/'].abdq8u6g5").highlight().click();
+        $("a[href='/insurance/mortgage/'].abi1WX8dx").highlight().click();
         // Проверка элемента на новой странице
         $("h1[data-test='htmlTag title']").highlight().shouldHave(text("Купите страховку со скидкой 10% и получите шанс погасить ипотеку"));
         // Нажать на кнопку расчитать стоимость
-        $(".bbm16D4kA").highlight().click();
+        $(".bb0iMjkRt").highlight().click();
         // Заполнить форму
         $("div[data-guid='618aacdd-4251-4aac-b2e6-e39737e63335']").highlight().shouldHave(text("Калькулятор страхования ипотеки"));
         $(".kbMel6HUv").highlight().click();
