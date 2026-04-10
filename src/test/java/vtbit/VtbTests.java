@@ -22,7 +22,7 @@ public class VtbTests extends TastBaseV{
     @MethodSource("vtbit.StreamSettlementV#vtbit1")
     @ParameterizedTest(name = "vtbit-1 - {0}")
 
-    void vtbit1(Map<String, String> params) {
+    void vtbit1(Map<String, String> params, Map<String, String> verifyData) {
 
         new WebStepsV()
                 .startOpenPage()
@@ -38,7 +38,7 @@ public class VtbTests extends TastBaseV{
                 .sum(params.get("Стоимость недвижимости"))
                 .matherCapital()
                 .termCred(params.get("Срок кредита"))
-                .verifyInfo();
+                .verifyInfo(verifyData);
     }
 
 }
